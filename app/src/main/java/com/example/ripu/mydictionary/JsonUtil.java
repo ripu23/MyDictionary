@@ -4,6 +4,8 @@ import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * Created by ripu on 12/11/2016.
@@ -24,4 +26,17 @@ public class JsonUtil {
         }
         return jsonObject;
     }
+
+    public Object objectToClass(Object object){
+        JSONParser parser = new JSONParser();
+        Object obj = null;
+        try {
+            obj =  parser.parse(object.toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return obj;
+
+    }
+
 }
