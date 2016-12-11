@@ -3,9 +3,14 @@ package com.example.ripu.mydictionary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "word";
+    private EditText toBeSearchedWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,4 +19,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void searchWord(){
+        toBeSearchedWord = (EditText)findViewById(R.id.searchBox);
+        callApi(toBeSearchedWord.toString());
+    }
+
+    public void callApi(String toBeSearchedWord){
+        URLRetriever urlRetriever = new URLRetriever();
+        JsonUtil util = new JsonUtil();
+        String app_id = APIConstants.app_id;
+        String app_key = APIConstants.app_key;
+        String uri = APIConstants.uri;
+        Log.d(TAG,toBeSearchedWord);
+        String stringFromUrlRetriever = urlRetriever.objectForWordRetriever(uri,app_id,app_key);
+        Object obj = util.stringToJson(stringFromUrlRetriever);
+
+    }
+
 }
