@@ -8,9 +8,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/searchBackground"
     android:alpha="0.6"
     tools:context="com.example.ripu.mydictionary.MainActivity">
+
+    <Button
+        android:text="@string/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:id="@+id/searchButton"
+        android:onClick="searchWord" />
 
     <AutoCompleteTextView
         android:text="@string/searchBoxText"
@@ -23,17 +32,7 @@
         android:inputType="textAutoComplete"
         android:textIsSelectable="false"
         android:textCursorDrawable="@android:drawable/ic_search_category_default"
+        android:layout_marginTop="28dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp" />
-
-    <Button
-        android:text="@string/search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchBox"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:id="@+id/searchButton"
-        android:onClick="searchWord" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

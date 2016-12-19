@@ -22,10 +22,15 @@ public class URLRetriever {
             URL url = new URL(uri);
             HttpURLConnection conn = null;
             conn = (HttpURLConnection) url.openConnection();
+            if (!(conn instanceof HttpURLConnection)) {
+                throw new IOException("URL is not an Http URL");
+            }
+
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
             conn.setRequestProperty("app_id",app_id);
             conn.setRequestProperty("app_key",app_key);
+            int code = conn.getResponseCode();
             if(conn.getResponseCode() != 200){
                 String response = responseCodeFinder(conn.getResponseCode());
                 System.out.println("URL : "+url);
