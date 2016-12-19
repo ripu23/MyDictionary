@@ -27,16 +27,6 @@ public class JsonUtil {
         return jsonObject;
     }
 
-    public Object objectToClass(Object object){
-        JSONParser parser = new JSONParser();
-        Object obj = null;
-        try {
-            obj =  parser.parse(object.toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return obj;
 
-    }
 
 }

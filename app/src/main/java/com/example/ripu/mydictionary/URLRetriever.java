@@ -1,3 +1,4 @@
+/*
 package com.example.ripu.mydictionary;
 
 import java.io.BufferedReader;
@@ -6,10 +7,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLConnection;
 
+*/
 /**
  * Created by ripu on 12/11/2016.
- */
+ *//*
+
 
 public class URLRetriever {
 
@@ -20,13 +24,13 @@ public class URLRetriever {
 
         try {
             URL url = new URL(uri);
-            HttpURLConnection conn = null;
-            conn = (HttpURLConnection) url.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             if (!(conn instanceof HttpURLConnection)) {
                 throw new IOException("URL is not an Http URL");
             }
 
             conn.setRequestMethod("GET");
+            System.setProperty("http.keepAlive","false");
             conn.setRequestProperty("Accept", "application/json");
             conn.setRequestProperty("app_id",app_id);
             conn.setRequestProperty("app_key",app_key);
@@ -37,8 +41,10 @@ public class URLRetriever {
                 System.out.println("Response : "+response);
                 return null;
             }
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
+            */
+/*BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));*//*
+
 
             System.out.println("Output from Server .... \n");
             while ((line = br.readLine()) != null) {
@@ -78,3 +84,4 @@ public class URLRetriever {
 
     }
 }
+*/
