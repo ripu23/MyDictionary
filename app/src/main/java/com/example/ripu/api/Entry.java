@@ -1,12 +1,14 @@
 package com.example.ripu.api;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by ripu on 12/7/2016.
  */
-
+@JsonIgnoreProperties
 public class Entry {
 
     private List<String> editorialNotes = new ArrayList<>();

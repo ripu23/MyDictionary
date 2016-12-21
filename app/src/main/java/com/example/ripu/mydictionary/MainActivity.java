@@ -1,6 +1,8 @@
 package com.example.ripu.mydictionary;
 
 
+import android.app.Application;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +17,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -39,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         String extractText = toBeSearchedWord.getText().toString();
         Log.d(TAG, extractText);
         new CallbackTask().execute(APIConstants.uri+extractText);
+    }
+
+    public void searchBoxClicked(View view){
+        toBeSearchedWord = (AutoCompleteTextView) findViewById(R.id.searchBox);
+        toBeSearchedWord.setText("");
     }
 
     //in android calling network requests on the main thread forbidden by default
@@ -93,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         JsonUtil util = new JsonUtil();
         Object obj =util.stringToJson(stringFromApi);
         ObjectMapper objectMapper = new ObjectMapper();
+
         try {
             RetrieveEntry retrieveEntry = objectMapper.readValue(obj.toString(),RetrieveEntry.class);
             System.out.println(retrieveEntry);

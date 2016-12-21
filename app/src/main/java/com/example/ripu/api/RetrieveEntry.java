@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RetrieveEntry {
 
-    private List<MetaData> metadata = new ArrayList<>();
+    private MetaData metadata;
     private List<InlineModel1> results = new ArrayList<>();
 
     public List<InlineModel1> getResults() {
@@ -20,11 +20,11 @@ public class RetrieveEntry {
         this.results = results;
     }
 
-    public List<MetaData> getMetadata() {
+    public MetaData getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(List<MetaData> metadata) {
+    public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
 }
