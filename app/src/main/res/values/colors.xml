@@ -2,6 +2,6 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#f0f4f3</color>
-    <color name="searchBoxColor">#FFC6CECC</color>
+    <color name="colorAccent">#86d2bf</color>
+    <color name="searchBoxColor">#c6cecc</color>
 </resources>

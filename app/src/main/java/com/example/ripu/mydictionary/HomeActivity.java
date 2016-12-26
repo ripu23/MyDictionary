@@ -1,33 +1,22 @@
 package com.example.ripu.mydictionary;
 
-
-import android.app.Application;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
-
 import com.example.ripu.api.RetrieveEntry;
-
 import org.codehaus.jackson.map.ObjectMapper;
-
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "word";
     AutoCompleteTextView toBeSearchedWord;
@@ -35,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_activity);
+
         toBeSearchedWord = (AutoCompleteTextView) findViewById(R.id.searchBox);
     }
 
