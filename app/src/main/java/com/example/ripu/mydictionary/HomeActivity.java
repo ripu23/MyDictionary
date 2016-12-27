@@ -36,10 +36,6 @@ public class HomeActivity extends AppCompatActivity {
         new CallbackTask().execute(APIConstants.uri+extractText);
     }
 
-    public void searchBoxClicked(View view){
-        toBeSearchedWord = (AutoCompleteTextView) findViewById(R.id.searchBox);
-        toBeSearchedWord.setText("");
-    }
 
     //in android calling network requests on the main thread forbidden by default
     //create class to do async job

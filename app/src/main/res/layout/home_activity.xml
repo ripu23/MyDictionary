@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@android:color/holo_red_light">
+    tools:background="@android:color/holo_red_light"
+    android:weightSum="1">
 
 
     <AutoCompleteTextView
@@ -18,10 +19,26 @@
         android:hint="@string/searchBoxText"
         tools:ignore="LabelFor" />
 
-    <ImageButton
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/searchbutton"
-        android:id="@+id/imageButton2"
-        />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+
+            android:background="@drawable/round"
+            app:srcCompat="@mipmap/kalyani"
+            android:id="@+id/searchButton"
+            android:scaleType="fitXY"
+            android:layout_width="102dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:onClick="searchWord" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
